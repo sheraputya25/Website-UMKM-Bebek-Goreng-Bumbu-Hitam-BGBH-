@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontak - Bebek Goreng Madura</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="container">
+        <div class="logo">BGBH</div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="tentang.html">Tentang</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="rekomendasi.html">Rekomendasi</a></li>
+            <li><a href="testimoni.html">Testimoni</a></li>
+            <li><a href="kontak.html" class="active">Kontak</a></li>
+            <li><a href="maps.html">Maps</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO KONTAK -->
+    <section class="hero-kontak">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h2>Hubungi Kami & Pesan Sekarang</h2>
+        <p>
+          Nikmati kelezatan bebek goreng dengan bumbu hitam khas Madura yang
+          otentik. Kami siap melayani Anda.
+        </p>
+      </div>
+    </section>
+
+    <!-- INFO KONTAK -->
+    <section class="info-kontak">
+      <div class="kontak-card">
+        <h3>GoFood</h3>
+        <p>
+          <a
+            href="https://gofood.co.id/jakarta/restaurant/bebek-goreng-bumbu-hitam-kiki-jl-villa-pertiwi-2b4485aa-0c86-4925-b0cf-615efb841bd2?bonsai_code=PbHN6Xj"
+            target="_blank"
+          >
+            Pesan melalui GoFood
+          </a>
+        </p>
+      </div>
+      <div class="kontak-card">
+        <h3>GrabFood</h3>
+        <p>
+          <a
+            href="https://r.grab.com/g/6-20251126_220555_6fca227c651946dd878a7a2ca3a5748c_MEXMPS-6-C6UTJ623VZAGT6"
+            target="_blank"
+          >
+            Pesan melalui GrabFood
+          </a>
+        </p>
+      </div>
+      <div class="kontak-card">
+        <h3>Instagram</h3>
+        <p>
+          <a
+            href="https://www.instagram.com/bebekrumahan09?igsh=ejFsa3lwbmptbTdn"
+            target="_blank"
+          >
+            @bebekrumahan09
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- FORM PEMESANAN & RESERVASI -->
+    <section class="form-section">
+      <div class="form-container">
+        <div class="form-box">
+          <h3>Formulir Pemesanan & Reservasi</h3>
+          <form id="formPesan">
+            <input type="text" id="nama" placeholder="Nama Lengkap" required />
+
+            <select id="jenis" required>
+              <option value="">Pilih Jenis Pesanan</option>
+              <option value="Pesan Antar">Pesan Antar</option>
+              <option value="Reservasi">Reservasi</option>
+            </select>
+
+            <input
+              type="number"
+              id="jumlah"
+              min="0"
+              placeholder="Jumlah Porsi / Orang"
+              required
+            />
+
+            <input type="datetime-local" id="tanggal" required />
+
+            <textarea id="pesanan" placeholder="Pesanan Anda"></textarea>
+
+            <textarea
+              id="catatan"
+              placeholder="Catatan Tambahan (contoh: minta sambal lebih)"
+            ></textarea>
+
+            <button type="submit" class="btn-kirim">
+              Kirim Pesanan / Reservasi
+            </button>
+          </form>
+        </div>
+
+        <!-- BOX INFO KONTAK DIKANAN -->
+        <div class="side-contact-box">
+          <div class="sub-box">
+            <h3>Email</h3>
+            <p>
+              <a href="mailto:rifqialamsyah910@gmail.com">
+                rifqialamsyah910@gmail.com
+              </a>
+            </p>
+          </div>
+
+          <div class="sub-box">
+            <h3>Telepon</h3>
+            <p><a href="tel:+6285881280298"> +62 858 8128 0298</a></p>
+          </div>
+
+          <div class="sub-box">
+            <h3>Lihat Lokasi</h3>
+            <p>
+              <a href="maps.html" class="lokasi-btn"> Buka Maps </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-item">
+          <h3>Bebek Goreng Madura</h3>
+          <p>
+            Gg. Empang Batu No.165, Sukamaju,<br />
+            Cilodong, Depok, Jawa Barat
+          </p>
+        </div>
+
+        <div class="footer-item">
+          <h3>Jam Buka</h3>
+          <p>Senin - Minggu<br />7:00 - 23:59</p>
+        </div>
+
+        <div class="footer-item">
+          <h3>Ikuti Kami</h3>
+          <a
+            href="https://www.instagram.com/bebekrumahan09"
+            target="_blank"
+            class="instagram-link"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+            />
+            <span>@bebekrumahan09</span>
+          </a>
+        </div>
+      </div>
+
+      <p class="footer-bottom">© 2025 Bebek Goreng Bumbu Hitam Madura.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

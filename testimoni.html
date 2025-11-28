@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testimoni - BGBH</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="container">
+        <div class="logo">BGBH</div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="tentang.html">Tentang</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="rekomendasi.html">Rekomendasi</a></li>
+            <li><a href="testimoni.html" class="active">Testimoni</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+            <li><a href="maps.html">Maps</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HEADER MERAH -->
+    <section class="header-testimoni">
+      <h1>Testimoni Pelanggan</h1>
+      <p>Apa kata pelanggan tentang Bebek Goreng Bumbu Hitam Madura?</p>
+    </section>
+
+    <!-- LINK PLATFORM -->
+    <section class="external-platforms">
+      <h3>Lihat Testimoni di Platform Lain:</h3>
+
+      <div class="platform-icons">
+        <a
+          href="https://gofood.co.id/jakarta/restaurant/bebek-goreng-bumbu-hitam-kiki-jl-villa-pertiwi-2b4485aa-0c86-4925-b0cf-615efb841bd2?bonsai_code=PbHN6Xj"
+          target="_blank"
+        >
+          <img
+            src="Gofood.jpeg"
+            alt="GoFood"
+            class="gofood-icon"
+            style="cursor: pointer"
+          />
+        </a>
+
+        <a
+          href="https://r.grab.com/g/6-20251126_220555_6fca227c651946dd878a7a2ca3a5748c_MEXMPS-6-C6UTJ623VZAGT6"
+          target="_blank"
+        >
+          <img
+            src="Grabfood.jpeg"
+            alt="GrabFood"
+            class="grabfood-icon"
+            style="cursor: pointer"
+          />
+        </a>
+      </div>
+    </section>
+
+    <!-- FILTER -->
+    <section class="review-filter">
+      <select id="filterRating">
+        <option value="high">Highest Rating</option>
+        <option value="low">Lowest Rating</option>
+      </select>
+    </section>
+
+    <!-- REVIEW LIST -->
+    <section id="reviewContainer">
+      <!-- Review 1 -->
+      <div class="review-card">
+        <img
+          src="https://randomuser.me/api/portraits/men/32.jpg"
+          class="profile"
+        />
+        <div class="review-content">
+          <h4>Ahmad Syaifullah</h4>
+          <span>June 2024</span>
+          <p class="stars">★★★★★</p>
+          <p>Sangat enak! Bebek bumbu hitamnya juara…</p>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-card">
+        <img
+          src="https://randomuser.me/api/portraits/men/15.jpg"
+          class="profile"
+        />
+        <div class="review-content">
+          <h4>Budi Santoso</h4>
+          <span>May 2024</span>
+          <p class="stars">★★★★★</p>
+          <p>Rasa Madura paling otentik! Wajib coba…</p>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-card">
+        <img
+          src="https://randomuser.me/api/portraits/women/22.jpg"
+          class="profile"
+        />
+        <div class="review-content">
+          <h4>Citra Lestari</h4>
+          <span>April 2024</span>
+          <p class="stars">★★★★★</p>
+          <p>Bebek bumbu hitam terenak sejauh ini…</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGINATION -->
+    <div class="pagination">
+      <span class="page" onclick="changePage(1)">1</span>
+      <span class="page" onclick="changePage(2)">2</span>
+      <span class="page" onclick="changePage(3)">3</span>
+    </div>
+
+    <!-- FORM REVIEW -->
+    <section class="review-form">
+      <h2>Kirim Ulasan Anda</h2>
+
+      <input type="text" id="nameInput" placeholder="Nama Anda" />
+
+      <select id="ratingInput">
+        <option value="5">★★★★★ (5)</option>
+        <option value="4">★★★★☆ (4)</option>
+        <option value="3">★★★☆☆ (3)</option>
+        <option value="2">★★☆☆☆ (2)</option>
+        <option value="1">★☆☆☆☆ (1)</option>
+      </select>
+
+      <textarea id="textInput" placeholder="Tulis ulasan…"></textarea>
+
+      <button onclick="submitReview()">Kirim</button>
+    </section>
+
+    <script src="script.js"></script>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-item">
+          <h3>Bebek Goreng Madura</h3>
+          <p>
+            Gg. Empang Batu No.165, Sukamaju,<br />
+            Cilodong, Depok, Jawa Barat
+          </p>
+        </div>
+
+        <div class="footer-item">
+          <h3>Jam Buka</h3>
+          <p>Senin - Minggu<br />7:00 - 23:59</p>
+        </div>
+
+        <div class="footer-item">
+          <h3>Ikuti Kami</h3>
+          <a
+            href="https://www.instagram.com/bebekrumahan09"
+            target="_blank"
+            class="instagram-link"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+            />
+            <span>@bebekrumahan09</span>
+          </a>
+        </div>
+      </div>
+
+      <p class="footer-bottom">© 2025 Bebek Goreng Bumbu Hitam Madura.</p>
+    </footer>
+  </body>
+</html>
