@@ -1318,102 +1318,109 @@ footer {
 }
 
 /* ============================================================
-   KODE TAMBAHAN UNTUK TAMPILAN HANDPHONE (RESPONSIF)
-   Tempelkan di paling bawah file style.css
+   PERBAIKAN TOTAL UNTUK TAMPILAN HANDPHONE (RESPONSIF)
+   Tempelkan ini di paling bawah style.css untuk menimpa kode lama
    ============================================================ */
 
 @media screen and (max-width: 768px) {
-    /* 1. Navigasi & Header */
-    .navbar {
-        flex-direction: column; /* Menu menumpuk ke bawah */
-        padding: 15px;
-        height: auto; /* Agar tidak terpotong */
+    /* 1. Reset Body agar tidak bisa geser kanan-kiri */
+    body, html {
+        overflow-x: hidden !important;
+        width: 100%;
+        margin: 0;
+        padding: 0;
     }
 
-    .nav-links {
-        display: flex;
-        flex-wrap: wrap; /* Supaya menu kalau gak muat pindah ke baris baru */
-        justify-content: center;
-        gap: 10px;
-        margin-top: 15px;
-    }
-
-    .nav-links li {
-        margin: 0 5px;
-    }
-
-    /* 2. Hero Section (Banner Utama) */
-    .hero {
-        padding: 40px 20px;
-        text-align: center;
-    }
-
-    .hero h1 {
-        font-size: 24px !important; /* Ukuran teks judul dikecilkan untuk HP */
-    }
-
-    .hero p {
-        font-size: 14px !important;
-    }
-
-    /* 3. Container Utama & Section */
-    .container, section {
+    /* 2. Navigasi (BGBH Header) */
+    header {
         width: 100% !important;
-        padding: 20px !important;
-        margin: 0 !important;
-        box-sizing: border-box; /* Mencegah elemen bocor ke samping */
+        height: auto !important;
+        padding: 10px 0 !important;
     }
 
-    /* 4. Grid Menu & Layanan (Penting!) */
-    /* Mengubah 3-4 kolom di laptop menjadi 1 kolom di HP */
-    .menu-container, 
-    .rekomendasi-grid, 
-    .features-container, 
-    .testi-grid, 
-    .gallery-grid {
+    nav {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    nav ul {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        padding: 0 !important;
+        margin: 10px 0 !important;
+        list-style: none;
+    }
+
+    nav ul li {
+        margin: 5px 10px !important;
+    }
+
+    /* 3. Banner Utama (Hero) */
+    .banner, .hero-section, .hero {
+        width: 100% !important;
+        height: auto !important;
+        padding: 20px 10px !important;
+        background-size: cover !important;
+    }
+
+    /* 4. Memaksa SEMUA Container menjadi lebar layar HP */
+    .container, .content, section, .main-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 15px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 5. Mengatur Kartu & Menu (Agar jadi 1 kolom seperti di foto) */
+    .menu-container, .grid-container, .rekomendasi-grid, .testi-container, .features-container {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
-        gap: 20px !important;
+        width: 100% !important;
     }
 
-    /* 5. Kartu (Menu, Testimoni, Fitur) */
-    .menu-item, 
-    .card, 
-    .testi-item, 
-    .feature-item, 
-    .promo-card {
-        width: 90% !important; /* Kartu jadi lebar di HP */
-        max-width: 350px;
-        margin: 0 auto !important;
+    /* Ukuran kartu menu/item agar pas di layar */
+    .menu-item, .card, .feature-item, .testi-box, .promo-card {
+        width: 95% !important;
+        max-width: none !important;
+        margin-bottom: 20px !important;
     }
 
-    /* 6. Form Pemesanan & Kontak (Gambar 1 di foto kamu) */
-    .form-container, form {
+    /* 6. Form Reservasi (Gambar ke-7) */
+    .form-reservation, form {
         width: 100% !important;
         padding: 15px !important;
+        box-sizing: border-box !important;
     }
 
-    input, select, textarea, .btn-submit {
+    input, select, textarea {
         width: 100% !important;
-        margin-bottom: 10px;
-        font-size: 16px !important; /* Agar tidak auto-zoom di iPhone */
+        margin: 5px 0 15px 0 !important;
     }
 
-    /* 7. Gambar & Video */
-    img, video {
+    /* 7. Galeri Foto & Gambar */
+    .gallery-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important; /* Buat jadi 2 kolom di HP agar rapi */
+        gap: 10px !important;
+    }
+
+    img {
         max-width: 100% !important;
         height: auto !important;
     }
 
-    /* 8. Footer */
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
+    /* 8. Footer (Bagian bawah) */
+    footer {
+        width: 100% !important;
+        padding: 30px 15px !important;
+        text-align: center !important;
     }
 
-    .footer-section {
-        width: 100% !important;
+    .footer-content {
+        flex-direction: column !important;
+        gap: 20px !important;
     }
 }
