@@ -1111,127 +1111,195 @@ footer {
   border-radius: 10px;
   cursor: pointer;
 }
-/* ======================= RESPONSIVE UNTUK MOBILE ======================= */
-@media (max-width: 768px) {
+/* ======================= FULL RESPONSIVE MOBILE ======================= */
+
+/* TABLET LANDSCAPE & HP BESAR */
+@media (max-width: 992px) {
+
+  body {
+    font-size: 90%;
+  }
 
   header {
-    padding: 15px 20px;
+    padding: 12px 18px;
   }
 
   nav ul {
-    flex-direction: column;
     gap: 10px;
-    margin-right: 0;
-    display: none; /* kalau ingin menu hamburger nanti */
   }
 
   .hero {
+    padding: 50px 10px;
     height: auto;
-    padding: 60px 15px;
   }
 
-  .galeri-section {
+  .galeri-section,
+  .menu-section,
+  .visi-misi,
+  .kisah-section,
+  .rekomendasi-section,
+  .form-section {
     padding: 40px 20px;
   }
 
-  .highlight-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .highlight-box {
-    width: 100%;
-    max-width: 350px;
-  }
-
-  .cta {
-    padding: 60px 20px;
-  }
-
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  /* About Page */
-  .kisah-container {
-    flex-direction: column;
-    text-align: center;
+  .menu-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
   }
 
   .kisah-image img {
     width: 100%;
-    max-width: 350px;
-  }
-
-  .video-section video {
-    width: 100%;
-    height: auto;
-  }
-
-  /* Menu Grid – dari 3 kolom → 1 kolom */
-  .menu-container {
-    grid-template-columns: 1fr !important;
-    padding: 0 15px;
-  }
-
-  .menu-section {
-    padding: 50px 20px;
-  }
-
-  /* Kontak Page */
-  .form-container {
-    flex-direction: column;
-    padding: 0 10px;
-  }
-
-  .form-section {
-    padding: 50px 20px;
-  }
-
-  .kontak-card {
-    width: 100%;
-    max-width: 320px;
-  }
-
-  .info-kontak {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .floating-cart {
-    width: 80%;
-    text-align: center;
-  }
-
-  .hero-kontak h2 {
-    font-size: 1.8rem;
+    max-width: 300px;
   }
 }
 
-/* Extra small screens – HP kecil */
-@media (max-width: 480px) {
+/* HP PORTRAIT */
+@media (max-width: 768px) {
 
-  header .logo {
+  body {
+    font-size: 85%;
+  }
+
+  header {
+    padding: 10px 15px;
+  }
+
+  .logo {
     font-size: 1rem;
   }
 
-  .btn-cta-primary, .btn-cta-outline {
+  nav ul {
+    display: none;
+  }
+
+  .hero {
+    padding: 40px 5px;
+    height: auto;
+  }
+
+  .galeri-section {
+    padding: 30px 10px;
+  }
+
+  .galeri-container {
+    gap: 15px;
+  }
+
+  .galeri-item img {
+    height: 180px;
+  }
+
+  .highlight-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .highlight-box {
     width: 100%;
-    text-align: center;
+    padding: 20px;
+    min-height: auto;
+  }
+
+  .cta {
+    padding: 40px 15px;
   }
 
   .cta h2 {
     font-size: 1.4rem;
   }
 
-  .about-header h1,
-  .menu-header h2,
-  .maps-header h1 {
-    font-size: 1.6rem;
+  .menu-section {
+    padding: 30px 10px;
+  }
+
+  .menu-subtitle {
+    margin-bottom: 30px;
+  }
+
+  .menu-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .menu-card img {
-    height: 200px;
+    height: 180px;
+  }
+
+  .rekomendasi-section {
+    padding: 20px 10px;
+  }
+
+  .menu-desc {
+    padding: 0 8px;
+  }
+
+  .floating-cart {
+    width: 85%;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  footer {
+    padding: 30px 20px 10px;
+    text-align: center;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  /* Kisah Section */
+  .kisah-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .kisah-title {
+    font-size: 1.4rem;
+  }
+
+  /* Kontak */
+  .form-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Video */
+  .video-section video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* HP KECIL */
+@media (max-width: 468px) {
+
+  body {
+    font-size: 78%;
+  }
+
+  .hero {
+    padding: 30px 5px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .cta h2 {
+    font-size: 1.2rem;
+  }
+
+  .kisah-title {
+    font-size: 1.2rem;
+  }
+
+  .menu-card img {
+    height: 150px;
+  }
+
+  .video-title {
+    font-size: 1.4rem;
   }
 }
