@@ -13,16 +13,25 @@
   --gelap: #222;
 }
 
-/* ===== ========================HEADER Website ===================================== */
+/* Tambahan Global agar tidak geser kanan-kiri di HP */
+body, html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* ===== HEADER Website ===== */
 header {
   background: var(--merah);
   padding: 15px 40px;
+  width: 100%;
 }
 
 header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1200px; /* Diubah agar fleksibel */
+  margin: 0 auto;
 }
 
 header .logo {
@@ -35,7 +44,6 @@ nav ul {
   display: flex;
   gap: 15px;
   list-style: none;
-  margin-right: 20px;
 }
 
 nav a {
@@ -49,7 +57,7 @@ nav a.active {
   transition: 0.3s ease;
 }
 
-/* =================================================HALAMAN BERANDA====================================== */
+/* ================= HALAMAN BERANDA ================= */
 
 .hero {
   background-size: cover;
@@ -60,60 +68,43 @@ nav a.active {
   height: 90vh;
   padding: 0 20px;
   position: relative;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .galeri-section {
-  padding: 70px 70px;
+  padding: 70px 5%;
   background: var(--abu);
   text-align: center;
-}
-
-.galeri-section h2 {
-  color: var(--gelap);
-  margin-bottom: 30px;
 }
 
 .galeri-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
-}
-
-.galeri-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .galeri-item img {
   width: 100%;
   height: 250px;
   object-fit: cover;
+  border-radius: 12px;
   transition: transform 0.4s ease, filter 0.4s ease;
-}
-
-.galeri-item:hover img {
-  transform: scale(1.05);
-  filter: brightness(85%);
 }
 
 .highlight-section {
   background: #f5f5f5;
-  padding: 80px 40px;
+  padding: 80px 5%;
   text-align: center;
 }
 
 .highlight-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Diubah agar ke tengah */
   flex-wrap: wrap;
   gap: 30px;
   max-width: 1300px;
@@ -123,51 +114,20 @@ nav a.active {
 .highlight-box {
   background: #e9e9e9;
   border-radius: 20px;
-  padding: 40px 40px;
-  width: 400px;
-  min-height: 180px; /* biar tinggi seimbang */
+  padding: 40px;
+  width: 100%;
+  max-width: 400px; /* Diubah agar tidak pecah di HP */
+  min-height: 180px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.highlight-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
-}
-
-.highlight-box .emoji {
-  font-size: 2rem;
-  display: block;
-  margin-bottom: 10px;
-}
-
-.highlight-box h3 {
-  color: #b30000;
-  font-size: 1.2rem;
-  margin-bottom: 8px;
-}
-
-.highlight-box p {
-  color: #333;
-  font-size: 0.95rem;
-  line-height: 1.4;
 }
 
 .cta {
   background: linear-gradient(135deg, #b30000, #ff5252);
   color: var(--putih);
   text-align: center;
-  padding: 80px 30px;
+  padding: 80px 5%;
   position: relative;
   overflow: hidden;
-}
-
-.cta::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("Bebek goreng.jpeg") center/cover no-repeat;
-  opacity: 0.15;
 }
 
 .cta-content {
@@ -177,19 +137,6 @@ nav a.active {
   margin: 0 auto;
 }
 
-.cta h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  line-height: 1.3;
-}
-
-.cta p {
-  font-size: 1.05rem;
-  margin-bottom: 40px;
-  color: #ffeaea;
-}
-
 .cta-buttons {
   display: flex;
   justify-content: center;
@@ -197,1027 +144,178 @@ nav a.active {
   gap: 15px;
 }
 
-.btn-cta-primary {
-  background: #fff;
-  color: #b30000;
-  padding: 14px 26px;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-.btn-cta-primary:hover {
-  background: #ffcccc;
-  transform: scale(1.05);
-}
-
-.btn-cta-outline {
-  border: 2px solid #fff;
-  color: #fff;
-  padding: 12px 24px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s ease;
-}
-
-.btn-cta-outline:hover {
-  background: rgba(255, 255, 255, 0.15);
-  transform: scale(1.05);
-}
-
-/* =================FOOTER Website============== */
+/* ================= FOOTER ================= */
 footer {
   background: var(--merah);
   color: var(--putih);
-  padding: 50px 40px 20px;
-  text-align: left;
+  padding: 50px 5% 20px;
 }
 
 .footer-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: flex-start;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  gap: 20px;
+  gap: 30px;
 }
 
-.footer-item {
-  flex: 1 1 300px;
-}
-
-.footer-item h3 {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-}
-
-.footer-item p {
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 0.85rem;
-  color: #ffe0e0;
-}
-
-.instagram-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: 0.3s;
-}
-
-.instagram-link img {
-  width: 22px;
-  height: 22px;
-  transition: transform 0.3s;
-}
-
-.instagram-link:hover {
-  color: #ffd700;
-}
-
-.instagram-link:hover img {
-  transform: scale(1.1);
-}
-
-/* ====================================================HALAMAN TENTANG (ABOUT)============================================*/
-
-/* Header Merah */
-.about-header {
+/* ================= HALAMAN TENTANG (ABOUT) ================= */
+.about-header, .menu-header, .header-menu, .header-testimoni, .maps-header {
   background: var(--merah);
   color: var(--putih);
   text-align: center;
   padding: 80px 20px;
   border-radius: 0 0 25px 25px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-.about-header h1 {
-  font-size: 2.3rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.about-header p {
-  font-size: 1.1rem;
-  color: #ffeaea;
-}
-
-.visi-misi {
-  padding: 70px 40px;
-  text-align: center;
-  background: var(--abu);
-}
-
-.visi-misi h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: var(--gelap);
-}
-
-.visi-misi p {
-  color: #666;
-  margin-bottom: 40px;
-}
-
-.visi-misi-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 35px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.vm-card {
-  background: #fff;
-  padding: 25px;
-  border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: left;
-}
-
-.vm-card h3 {
-  color: var(--merah);
-  margin-bottom: 8px;
-  font-size: 1.2rem;
 }
 
 .kisah-section {
-  padding: 80px 8%;
+  padding: 80px 5%;
 }
 
 .kisah-container {
   display: flex;
   align-items: center;
+  flex-wrap: wrap; /* Agar bisa turun di HP */
   gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .kisah-image img {
-  width: 350px;
+  width: 100%;
+  max-width: 350px;
   border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-.kisah-content {
-  flex: 1;
-}
-
-.kisah-title {
-  font-size: 36px;
-  color: #b30000;
-  font-weight: 700;
-  margin-bottom: 15px;
-}
-.kisah-content p {
-  text-align: justify;
-  margin-bottom: 15px;
-}
-
-.video-section {
-  text-align: center;
-  padding: 60px 0;
-}
-
-.video-title {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 30px;
 }
 
 .video-section video {
-  width: 65%;
-  height: 430px;
-  border-radius: 20px;
-  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
-  object-fit: cover;
-}
-
-.cta-section {
-  background: linear-gradient(135deg, #b30000, #ff5252);
-  position: relative;
-  text-align: center;
-  padding: 90px 25px;
-  color: #fff;
-  overflow: hidden;
-}
-
-.cta-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("Bebek goreng.jpeg") center/cover no-repeat;
-  opacity: 0.15; /* gambar samar */
-}
-
-.cta-section .cta-content {
-  position: relative;
-  z-index: 2;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.cta-btn {
-  display: inline-block;
-  background: #fff;
-  color: #b30000;
-  padding: 14px 32px;
-  border-radius: 10px;
-  font-weight: 600;
-  text-decoration: none;
-  margin-top: 25px;
-  transition: 0.3s ease;
-}
-
-.cta-btn:hover {
-  background: #ffcccc;
-  transform: scale(1.08);
-}
-.cta-section .cta-content h2 {
-  margin-bottom: 15px;
-}
-
-.cta-section .cta-content p {
-  margin-bottom: 20px;
-}
-
-/* ======================================== HALAMAN MENU ============================================================== */
-.menu-header {
-  background: var(--merah);
-  color: var(--putih);
-  text-align: center;
-  padding: 80px 20px;
-  border-radius: 0 0 25px 25px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-.menu-header h2 {
-  font-size: 2.3rem;
-  font-weight: 700;
-  margin-bottom: 7px;
-}
-
-.menu-header p {
-  font-size: 1.1rem;
-  color: #ffeaea;
-}
-.menu-section {
-  background: var(--abu);
-  padding: 80px 60px;
-  text-align: center;
-}
-
-.menu-section h2 {
-  color: var(--gelap);
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-.menu-subtitle {
-  color: #666;
-  font-size: 1rem;
-  margin-bottom: 50px;
-}
-
-.menu-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 kolom saja */
-  gap: 40px;
-  max-width: 1100px;
-  margin: 0 auto;
-  justify-items: center;
-}
-
-.menu-card {
-  background: #fff;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.menu-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
-}
-
-.menu-card img {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
+  max-width: 800px;
+  height: auto;
+  border-radius: 20px;
 }
 
-.menu-card h3 {
-  color: #b30000;
-  margin-top: 15px;
-  font-size: 1.1rem;
-}
-
-.menu-card .desc {
-  font-size: 0.95rem;
-  color: #444;
-  margin: 6px 0 10px;
-}
-
-.price {
-  display: inline-block;
-  background: #b30000;
-  color: white;
-  font-weight: bold;
-  padding: 6px 14px;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-.btn-pesan {
-  background: #b30000;
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.btn-pesan:hover {
-  background: #800000;
-}
-.floating-cart {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #d32f2f;
-  color: #fff;
-  padding: 14px 28px;
-  font-size: 18px;
-  font-weight: 600;
-  border-radius: 40px;
-  text-decoration: none;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
-  z-index: 9999;
-}
-
-/* ================================================== HALAMAN REKOMENDASI ============================================================== */
-.header-menu {
-  background: var(--merah);
-  color: var(--putih);
-  text-align: center;
-  padding: 70px 20px;
-  border-radius: 0 0 25px 25px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-.header-menu h1 {
-  font-size: 2.4rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.header-menu p {
-  color: #ffeaea;
-  font-size: 1.1rem;
-}
-
-.rekomendasi-section {
-  background: var(--abu);
-  padding: 40px 50px;
-  text-align: center;
-}
-
+/* ================= HALAMAN MENU & REKOMENDASI ================= */
 .menu-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 50px;
-  max-width: 1100px;
+  gap: 30px;
+  max-width: 1200px;
   margin: 0 auto;
-  margin-top: 10px !important;
 }
 
 .menu-card {
   background: #fff;
   border-radius: 16px;
-  padding-bottom: 25px;
-  text-align: center;
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
-  transition: 0.3s ease;
+  overflow: hidden;
+  width: 100%;
 }
 
-.menu-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
-}
-
-.menu-card img {
-  width: 95%;
-  height: 280px;
-  object-fit: cover;
-}
-
-.menu-title {
-  margin-top: 15px;
-  color: var(--merah);
-  font-weight: 600;
-}
-
-.menu-desc {
-  font-size: 0.95rem;
-  color: #444;
-  padding: 0 15px;
-  margin-top: 5px;
-}
-
-.menu-harga {
-  background: #b30000;
-  color: white;
-  display: inline-block;
-  padding: 6px 14px;
-  border-radius: 8px;
-  margin: 12px 0;
-  font-weight: bold;
-}
-
-.menu-btn-box {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-}
-
-.btn-lihat {
-  background: #444;
-  color: white;
-  padding: 9px 14px;
-  border-radius: 9px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.btn-lihat:hover {
-  background: #222;
-}
-
-.btn-pesan {
-  background: var(--merah);
-  color: white;
-  border: none;
-  padding: 9px 14px;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.btn-pesan:hover {
-  background: #800000;
-}
-
-.header-menu {
-  margin-bottom: 30px !important;
-}
-
-/* ============================================== HALAMAN KONTAK============================================================= */
-.hero-kontak {
-  position: relative;
-  height: 250px;
-  background: var(--merah);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.hero-kontak .overlay {
-  display: none;
-}
-
-.hero-kontak .hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 600px;
-}
-
-.hero-kontak h2 {
-  font-size: 2.3rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.hero-kontak p {
-  font-size: 1.1rem;
-  color: #ffeaea;
-}
-.hero-kontak {
-  border-radius: 0 0 25px 25px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-.info-kontak {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
-  margin: 40px auto;
-}
-
-.kontak-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: 250px;
-  text-align: center;
-}
-.kontak-card h3 {
-  color: #b91c1c;
-  margin-bottom: 8px;
-}
-
-.form-section {
-  background: #f8f8f8;
-  padding: 60px 40px;
-}
-
+/* ================= HALAMAN KONTAK ================= */
 .form-container {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap; /* Diubah ke wrap */
   justify-content: center;
-  align-items: flex-start;
   gap: 40px;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  text-align: left;
 }
 
 .form-box {
-  flex: 2;
-  background: #fff;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.form-box h3 {
-  margin-bottom: 15px;
-  color: #b91c1c;
-}
-
-.form-box form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.form-box input,
-.form-box select,
-.form-box textarea {
-  padding: 10px 12px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 0.95rem;
-  resize: vertical;
-}
-
-.btn-kirim {
-  background: #b91c1c;
-  color: #fff;
-  padding: 10px;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.btn-kirim:hover {
-  background: #8a1111;
+  flex: 1 1 500px; /* Lebih fleksibel */
+  min-width: 300px;
 }
 
 .side-contact-box {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex: 1 1 300px;
 }
 
-.sub-box {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.sub-box h3 {
-  margin-bottom: 8px;
-  color: #b91c1c;
-}
-
-.sub-box a {
-  color: rgba(0, 0, 0, 0.866);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.lokasi-btn {
-  display: inline-block;
-  background: #b30000;
-  color: white !important;
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.lokasi-btn:hover {
-  background: #8a1111;
-}
-
-/* ===== ==================================Halaman Maps==================================================== */
-.maps-header {
-  background: var(--merah);
-  color: var(--putih);
-  text-align: center;
-  padding: 80px 20px;
-  border-radius: 0 0 25px 25px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-.maps-header h1 {
-  font-size: 2.4rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.maps-header p {
-  color: #ffeaea;
-  font-size: 1.1rem;
-}
-
-.why-section {
-  padding: 60px 20px;
-  background: #f8f8f8;
-  text-align: center;
-}
-
-.why-title {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: #222;
-}
-
-.why-subtitle {
-  font-size: 16px;
-  color: #555;
-  margin-bottom: 40px;
-}
-
+/* ================= HALAMAN MAPS ================= */
 .why-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 25px;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
-}
-
-.why-card {
-  background: #fff;
-  padding: 25px;
-  border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: 0.2s;
-}
-
-.why-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-}
-
-.why-card img {
-  width: 70px;
-  height: 70px;
-  margin-bottom: 15px;
-}
-
-.why-card h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: #222;
-}
-
-.why-card p {
-  font-size: 14px;
-  color: #666;
-  line-height: 1.5;
-}
-
-.maps-section {
-  padding: 60px 20px;
-}
-
-.maps-section .title {
-  font-size: 32px;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.maps-section .address {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 15px;
 }
 
 .maps-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 25px;
   justify-content: center;
-  flex-wrap: wrap;
 }
 
 .map-box {
-  width: 600px;
-  height: 400px;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid #ddd;
-}
-
-.map-box iframe {
   width: 100%;
-  height: 100%;
-  border: none;
+  max-width: 600px;
+  height: 400px;
 }
 
-.hours-box {
-  width: 300px;
-  background: #ffffff;
-  padding: 25px;
-  border: 1px solid #ddd;
-  border-radius: 14px;
-}
-
-.hours-box h3 {
-  margin-bottom: 20px;
-  font-size: 22px;
-}
-
-.hours-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 20px;
-}
-
-.hours-list li {
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 0;
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.red {
-  color: #d22;
-}
-
-.note {
-  font-size: 13px;
-  margin-top: 10px;
-}
-
-/*===========================================TESTIMONI=================================================================================*/
-.header-testimoni {
-  background: var(--merah);
-  color: var(--putih);
-  text-align: center;
-  padding: 70px 20px;
-  border-radius: 0 0 25px 25px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-.header-testimoni h1 {
-  font-size: 2.4rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.header-testimoni p {
-  color: #ffeaea;
-  font-size: 1.1rem;
-}
-/* RATING SECTION */
-.stars {
-  color: #b30000;
-}
-
-.external-platforms {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.platform-icons img {
-  width: 80px;
-  margin: 10px;
-}
-
-/* FILTER */
-.review-filter {
-  text-align: center;
-  margin: 30px;
-}
-
-.review-filter button {
-  padding: 10px 20px;
-  border: none;
-  background: #b30000;
-  color: #fff;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-/* REVIEW CARD */
+/* ================= TESTIMONI ================= */
 .review-card {
   background: #fff;
-  width: 70%;
+  width: 95%; /* Diperlebar sedikit agar pas di layar kecil */
+  max-width: 800px;
   margin: 20px auto;
   padding: 20px;
   border-radius: 20px;
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.profile {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-}
-
-/* PAGINATION */
-.pagination {
-  text-align: center;
-  margin: 40px;
-}
-
-.pagination .page {
-  display: inline-block;
-  padding: 8px 15px;
-  margin: 5px;
-  border-radius: 8px;
-  background: #eee;
-  cursor: pointer;
-}
-
-.pagination .page:hover {
-  background: #b30000;
-  color: #fff;
-}
-
-/* FORM REVIEW */
 .review-form {
-  width: 70%;
-  background: #fff;
+  width: 95%;
+  max-width: 800px;
   margin: auto;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
-
-.review-form input,
-.review-form textarea,
-.review-form select {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-}
-
-.review-form button {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  background: #b30000;
-  color: #fff;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
 
 /* ============================================================
-   PERBAIKAN TOTAL UNTUK TAMPILAN HANDPHONE (RESPONSIF)
-   Tempelkan ini di paling bawah style.css untuk menimpa kode lama
+   MEDIA QUERIES (OTOMATIS AKTIF DI HP)
    ============================================================ */
-
 @media screen and (max-width: 768px) {
-    /* 1. Reset Body agar tidak bisa geser kanan-kiri */
-    body, html {
-        overflow-x: hidden !important;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-    }
+  header {
+    padding: 15px 20px;
+  }
 
-    /* 2. Navigasi (BGBH Header) */
-    header {
-        width: 100% !important;
-        height: auto !important;
-        padding: 10px 0 !important;
-    }
+  header .container {
+    flex-direction: column;
+    gap: 15px;
+  }
 
-    nav {
-        flex-direction: column !important;
-        align-items: center !important;
-    }
+  nav ul {
+    margin-right: 0;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-    nav ul {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        padding: 0 !important;
-        margin: 10px 0 !important;
-        list-style: none;
-    }
+  .hero {
+    height: 70vh;
+  }
 
-    nav ul li {
-        margin: 5px 10px !important;
-    }
+  .kisah-container {
+    flex-direction: column;
+    text-align: center;
+  }
 
-    /* 3. Banner Utama (Hero) */
-    .banner, .hero-section, .hero {
-        width: 100% !important;
-        height: auto !important;
-        padding: 20px 10px !important;
-        background-size: cover !important;
-    }
+  .form-container {
+    flex-direction: column;
+  }
 
-    /* 4. Memaksa SEMUA Container menjadi lebar layar HP */
-    .container, .content, section, .main-content {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 15px !important;
-        box-sizing: border-box !important;
-    }
+  .review-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-    /* 5. Mengatur Kartu & Menu (Agar jadi 1 kolom seperti di foto) */
-    .menu-container, .grid-container, .rekomendasi-grid, .testi-container, .features-container {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        width: 100% !important;
-    }
-
-    /* Ukuran kartu menu/item agar pas di layar */
-    .menu-item, .card, .feature-item, .testi-box, .promo-card {
-        width: 95% !important;
-        max-width: none !important;
-        margin-bottom: 20px !important;
-    }
-
-    /* 6. Form Reservasi (Gambar ke-7) */
-    .form-reservation, form {
-        width: 100% !important;
-        padding: 15px !important;
-        box-sizing: border-box !important;
-    }
-
-    input, select, textarea {
-        width: 100% !important;
-        margin: 5px 0 15px 0 !important;
-    }
-
-    /* 7. Galeri Foto & Gambar */
-    .gallery-grid {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important; /* Buat jadi 2 kolom di HP agar rapi */
-        gap: 10px !important;
-    }
-
-    img {
-        max-width: 100% !important;
-        height: auto !important;
-    }
-
-    /* 8. Footer (Bagian bawah) */
-    footer {
-        width: 100% !important;
-        padding: 30px 15px !important;
-        text-align: center !important;
-    }
-
-    .footer-content {
-        flex-direction: column !important;
-        gap: 20px !important;
-    }
+  .maps-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .map-box {
+    height: 300px;
+  }
 }
-
