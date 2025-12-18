@@ -1111,3 +1111,127 @@ footer {
   border-radius: 10px;
   cursor: pointer;
 }
+/* ======================= RESPONSIVE UNTUK MOBILE ======================= */
+@media (max-width: 768px) {
+
+  header {
+    padding: 15px 20px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-right: 0;
+    display: none; /* kalau ingin menu hamburger nanti */
+  }
+
+  .hero {
+    height: auto;
+    padding: 60px 15px;
+  }
+
+  .galeri-section {
+    padding: 40px 20px;
+  }
+
+  .highlight-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .highlight-box {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .cta {
+    padding: 60px 20px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* About Page */
+  .kisah-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .kisah-image img {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .video-section video {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Menu Grid – dari 3 kolom → 1 kolom */
+  .menu-container {
+    grid-template-columns: 1fr !important;
+    padding: 0 15px;
+  }
+
+  .menu-section {
+    padding: 50px 20px;
+  }
+
+  /* Kontak Page */
+  .form-container {
+    flex-direction: column;
+    padding: 0 10px;
+  }
+
+  .form-section {
+    padding: 50px 20px;
+  }
+
+  .kontak-card {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .info-kontak {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .floating-cart {
+    width: 80%;
+    text-align: center;
+  }
+
+  .hero-kontak h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Extra small screens – HP kecil */
+@media (max-width: 480px) {
+
+  header .logo {
+    font-size: 1rem;
+  }
+
+  .btn-cta-primary, .btn-cta-outline {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cta h2 {
+    font-size: 1.4rem;
+  }
+
+  .about-header h1,
+  .menu-header h2,
+  .maps-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .menu-card img {
+    height: 200px;
+  }
+}
