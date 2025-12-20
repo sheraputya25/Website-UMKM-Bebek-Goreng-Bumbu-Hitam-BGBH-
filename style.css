@@ -842,7 +842,51 @@ footer {
 .lokasi-btn:hover {
   background: #8a1111;
 }
+/* ==================== CART ==================== */
 
+.cart-section {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.item-info h4 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.qty-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.qty-box button {
+  border: none;
+  background: #b91c1c;
+  color: #fff;
+  padding: 3px 7px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.qty-box button:hover {
+  background: #8a1111;
+}
+
+.del-btn {
+  background: #111;
+}
 /* ===== ==================================Halaman Maps==================================================== */
 .maps-header {
   background: var(--merah);
