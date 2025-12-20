@@ -47,45 +47,93 @@ document.addEventListener("DOMContentLoaded", () => {
   // ============================================
   else if (path.includes("kontak.html")) {
     const formPesan = document.getElementById("formPesan");
-    const pesananBox = document.getElementById("pesanan");
+    const cartList = document.getElementById("cartList");
+    const cartTotal = document.getElementById("cartTotal");
     const catatanBox = document.getElementById("catatan");
 
-    const pesanan = JSON.parse(localStorage.getItem("pesanan")) || [];
-    if (Array.isArray(pesanan) && pesanan.length > 0 && pesananBox) {
-      const daftarPesanan = pesanan
-        .map((p) => `${p.nama} x${p.jumlah} (Rp${p.harga * p.jumlah})`)
-        .join("\n");
+    let pesanan = JSON.parse(localStorage.getItem("pesanan")) || [];
 
-      pesananBox.value = daftarPesanan;
-    }
+    function renderCart() {
+      cartList.innerHTML = "";
+      let totalHarga = 0;
 
-    // Submit → kirim ke WhatsApp
-    if (formPesan) {
-      formPesan.addEventListener("submit", (e) => {
-        e.preventDefault();
+      pesanan.forEach((p, index) => {
+        const item = document.createElement("div");
+        item.classList.add("cart-item");
 
-        const nama = document.getElementById("nama").value;
-        const jenis = document.getElementById("jenis").value;
-        const jumlah = document.getElementById("jumlah").value;
-        const tanggal = document.getElementById("tanggal").value;
+        item.innerHTML = `
+        <div class="item-info">
+          <h4>${p.nama}</h4>
+          <p>Rp ${p.harga.toLocaleString()}</p>
+        </div>
 
-        const pesananText = pesananBox ? pesananBox.value : "";
-        const catatanText = catatanBox ? catatanBox.value : "";
+        <div class="qty-box">
+          <button class="minus">-</button>
+          <span>${p.jumlah}</span>
+          <button class="plus">+</button>
+          <button class="del-btn">🗑️</button>
+        </div>
+      `;
 
-        const pesan = `Halo! Saya ingin melakukan ${jenis}.\n\nNama: ${nama}\nJumlah: ${jumlah}\nTanggal: ${tanggal}\nPesanan:\n${pesananText}\n\nCatatan tambahan:\n${catatanText}`;
+        item.querySelector(".plus").addEventListener("click", () => {
+          p.jumlah++;
+          updateCart();
+        });
 
-        const url = `https://wa.me/6285881280298?text=${encodeURIComponent(
-          pesan
-        )}`;
+        item.querySelector(".minus").addEventListener("click", () => {
+          if (p.jumlah > 1) {
+            p.jumlah--;
+          } else {
+            pesanan.splice(index, 1);
+          }
+          updateCart();
+        });
 
-        // Hapus pesanan setelah terkirim
-        localStorage.removeItem("pesanan");
+        item.querySelector(".del-btn").addEventListener("click", () => {
+          pesanan.splice(index, 1);
+          updateCart();
+        });
 
-        window.open(url, "_blank");
+        cartList.appendChild(item);
+
+        totalHarga += p.harga * p.jumlah;
       });
-    }
-  }
 
+      cartTotal.textContent = `Rp ${totalHarga.toLocaleString()}`;
+      localStorage.setItem("pesanan", JSON.stringify(pesanan));
+    }
+
+    function updateCart() {
+      renderCart();
+    }
+
+    renderCart();
+
+    formPesan.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const nama = document.getElementById("nama").value;
+      const jenis = document.getElementById("jenis").value;
+      const jumlah = document.getElementById("jumlah").value;
+      const tanggal = document.getElementById("tanggal").value;
+      const catatan = catatanBox.value;
+
+      let pesanWA = `Halo! Saya ingin melakukan ${jenis}.\n\nNama: ${nama}\nJumlah orang/porsi: ${jumlah}\nTanggal: ${tanggal}\n\nPesanan:\n`;
+
+      pesanan.forEach((p) => {
+        pesanWA += `• ${p.nama} x${p.jumlah}\n`;
+      });
+
+      pesanWA += `\nCatatan:\n${catatan}`;
+
+      const link = `https://wa.me/6285881280298?text=${encodeURIComponent(
+        pesanWA
+      )}`;
+
+      window.open(link, "_blank");
+      localStorage.removeItem("pesanan");
+    });
+  }
   // ============================================
   //                 TESTIMONI PAGE (DINAMIS)
   // ============================================
